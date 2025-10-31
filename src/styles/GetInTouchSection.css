@@ -1,0 +1,7 @@
+.get-in-touch-section {
+  width: 100%;
+  min-height: 400px;
+  background-color: var(--color-bg-light);
+  padding: 80px 40px;
+  text-align: center;
+}
