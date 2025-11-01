@@ -1,0 +1,44 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: var(--color-bg-cream);
+}
+
+.get-in-touch-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.find-us-on-section {
+  width: 100%;
+  background-color: var(--color-bg-light);
+  padding: 100px var(--section-padding-x);
+}
+
+.contact h2,
+.contact h3 {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  color: var(--color-dark-green);
+}
+
+
+.contact button {
+  background-color: var(--color-accent-yellow);
+  color: var(--color-dark-green);
+  border: none;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.contact button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
