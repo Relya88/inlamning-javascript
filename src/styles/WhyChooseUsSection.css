@@ -1,0 +1,113 @@
+.whychooseus-section {
+  background-color: var(--color-bg-cream);
+  max-width: var(--site-max-full);
+  margin: 0 auto;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  box-sizing: border-box;
+  height: 788px;
+  display: flex;
+  align-items: center;
+}
+
+.whychooseus-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 60px;
+  max-width: var(--site-max);
+  margin: 0 auto;
+}
+
+.whychooseus-subtitle {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-accent-yellow);
+  margin: 0 0 10px 0;
+}
+
+.whychooseus-title {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: var(--color-dark-green);
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+}
+
+.whychooseus-intro {
+  font-family: var(--font-main);
+  font-size: 16px;
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-dark-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feature-icon img {
+  width: 50px;
+  object-fit: contain;
+}
+
+.feature-item h5 {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--color-dark-green);
+  margin: 0 0 5px 0;
+}
+
+.feature-item p {
+  font-family: var(--font-main);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-dark);
+  margin: 0;
+}
+
+.whychooseus-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.whychooseus-text {
+  font-family: var(--font-main);
+  font-size: 16px;
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  margin: 40px 0 0 0;
+  max-width: 600px;
+}
+
+.whychooseus-image {
+  width: 550px;
+  height: auto;
+  border-radius: var(--border-radius);
+  background-color: #ccc;
+  border: 4px solid #e9e9e9;
+}
