@@ -1,0 +1,127 @@
+.testimonials-section {
+  position: relative;
+  width: 100%;
+  background-color: rgba(18, 55, 42, 0.8);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  box-sizing: border-box;
+  color: var(--color-text-light);
+}
+
+.testimonials-section .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(18, 55, 42, 0.8);
+  z-index: 1;
+}
+
+.testimonials-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: var(--site-max);
+  margin: 0 auto;
+}
+
+.testimonials-subtitle {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-accent-yellow);
+  margin: 0 0 10px;
+}
+
+.testimonials-title {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+.testimonials-desc {
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 1050px;
+  margin: 0 auto 50px;
+  color: #f3f3f3;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-content: center;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  color: var(--color-text-dark);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  text-align: left;
+  box-shadow: var(--shadow-light);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+}
+
+.testimonial-rating {
+  color: var(--color-accent-yellow);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.testimonial-comment {
+  font-family: var(--font-main);
+  font-size: 15px;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.testimonial-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-name {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0;
+  color: var(--color-dark-green);
+}
+
+.testimonial-company {
+  font-family: var(--font-main);
+  font-size: 14px;
+  margin: 0;
+  color: #666;
+}
+
+.quote-icon {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  flex: 0 0 auto;
+}

@@ -1,0 +1,193 @@
+.about-section {
+  height: 740px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background-color: var(--color-bg-light);
+  max-width: var(--site-max-full);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  box-sizing: border-box;
+}
+
+/* ------ vänstra sidan  ----- */
+.about-left,
+.about-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 549px;
+  box-sizing: border-box;
+}
+
+.about-left {
+  position: relative;
+  align-items: flex-start;
+}
+
+.about-image {
+  margin-left: 250px;
+  width: 115%;
+  max-width: 680px;
+  height: 430px;
+  object-fit: cover;
+  border: 4px solid #e9e9e9;
+  border-radius: var(--border-radius);
+  background-color: #ccc;
+}
+
+/* statistikrutan */
+.stats-box {
+  position: absolute;
+  bottom: -14px;
+  left: 65%;
+  transform: translateX(-50%);
+  width: 70%;
+  max-width: 760px;
+  background-color: var(--color-dark-green);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 48px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 800;
+  font-size: 60px;
+  color: var(--color-accent-yellow);
+  margin: 0;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.stat-item p {
+  font-family: var(--font-main);
+  font-size: 16px;
+  color: var(--color-text-light);
+  margin: 4px 0 0;
+}
+
+/* ----- högra sidan ------ */
+.about-right {
+  padding-left: 60px;
+  margin-right: 100px;
+}
+
+.about-subtitle {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: var(--color-accent-yellow);
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.about-title {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  font-size: 52px;
+  color: var(--color-dark-green);
+  margin: 0;
+}
+
+.about-text {
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  margin: 10px 70px 0 0;
+}
+
+/* Vision och Mission-rutorna */
+.vision-mission {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.info-box {
+  border: 1px solid #d9d9d9;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  transition: border-color var(--transition-fast);
+}
+
+.info-box:hover {
+  border-color: var(--color-accent-yellow);
+}
+
+.info-box h5 {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--color-dark-green);
+  margin: 0 0 10px 0;
+}
+
+.info-box p {
+  font-family: var(--font-main);
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Knapparna och kontaktinfo */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.discover-btn {
+  width: 200px;
+  height: 50px;
+  background-color: var(--color-accent-yellow);
+  color: var(--color-dark-green);
+  border: none;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.phone-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-left: 50px;
+  margin-right: 40px;
+  background: var(--color-dark-green);
+}
+
+.contact-title {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  margin: 0;
+  color: var(--color-dark-green);
+}
+
+.contact-number {
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+  color: var(--color-dark-green);
+}

@@ -1,0 +1,7 @@
+.find-us-on-section {
+  width: 100%;
+  min-height: 400px;
+  background-color: var(--color-bg-grey);
+  padding: 80px 40px;
+  text-align: center;
+}
