@@ -1,0 +1,110 @@
+.services-section {
+  background-color: var(--color-bg-light);
+  max-width: var(--site-max);
+  margin: 0 auto;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  box-sizing: border-box;
+}
+
+.services-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.services-subtitle {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-accent-yellow);
+  margin: 0;
+}
+
+.services-intro {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.services-title {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  font-size: 52px;
+  color: var(--color-dark-green);
+  margin: 0;
+  max-width: 600px;
+  line-height: 1.1;
+}
+
+.services-text {
+  font-family: var(--font-main);
+  font-size: 16px;
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  width: 650px;
+  margin: 20px 0 0 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 40px 30px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+.services-left,
+.services-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.service-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-image img {
+  width: 500px;
+  height: 360px;
+  object-fit: cover;
+  background-color: #c4c4c4;
+  border-radius: var(--border-radius);
+}
+
+.service-box {
+  width: 350px;
+  height: 165px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-sizing: border-box;
+  transition: border-color var(--transition-fast);
+  background-color: #fff;
+}
+
+.service-box:hover {
+  border-color: var(--color-accent-yellow);
+}
+
+.service-box h5 {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--color-dark-green);
+  margin: 0 0 8px 0;
+}
+
+.service-box p {
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: var(--color-text-dark);
+  margin: 0;
+  line-height: 1.4;
+}
