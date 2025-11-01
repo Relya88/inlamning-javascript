@@ -1,0 +1,35 @@
+@import "./styles/variables.css";
+
+/* Min globala css för färg+typsnitt*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: var(--color-bg-light);
+  font-family: var(--font-main);
+  color: var(--color-text-dark);
+}
+
+/* Mina globala container för allt innehåll */
+.container {
+  width: 100%;
+  max-width: var(--site-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding-x);
+}
+
+/* Min wrapper som styr sidans helhetslayout */
+.app-wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.main-content {
+  min-height: 0;
+}
+
+/* Eventuellt att jag lägger till global knapp för subscribe/submit som kan återanvändas, fråga Hans eller Therese var den ska vara */
+
+
