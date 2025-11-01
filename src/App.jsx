@@ -7,9 +7,8 @@ import Contact from "./pages/Contact";
 
 // Skrev enligt Hans video så att BrowserRoutern styr jag vilka Routes (sidor) som ska fungera i webbläsaren. 
 // Satte navbar och footer utanför Routes gör att de syns på samtliga sidor då de är konstanta.
-
 function App() {
-
+  
   return (
     <BrowserRouter>
       <div className="app-wrapper">
