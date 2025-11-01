@@ -1,0 +1,26 @@
+.brands-section {
+  width: 100%;
+  background-color: var(--color-bg-cream);
+  height: 148px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brands-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  max-width: var(--site-max-full);
+  width: 100%;
+  padding: 0 var(--section-padding-x);
+  box-sizing: border-box;
+}
+
+.brands-container img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity var(--transition-fast);
+}
