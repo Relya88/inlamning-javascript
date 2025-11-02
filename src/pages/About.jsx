@@ -3,7 +3,7 @@ import AboutSection from "../components/AboutSection";
 import BrandsSection from "../components/BrandsSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import WhyChooseUsSection from "../components/WhyChooseUsSection";
-import SubScribbeSection from "../components/SubscribeSection";
+import SubScribeSection from "../components/SubscribeSection";
 import "../styles/PageHero.css";
 import "../styles/AboutSection.css";
 import "../styles/TestimonialsSection.css";
@@ -21,8 +21,8 @@ export default function About() {
       <AboutSection />
       <BrandsSection />
       <TestimonialsSection />
-      <WhyChooseUsSection />
-      <SubScribbeSection />
+      <WhyChooseUsSection bgColor="white" />
+      <SubScribeSection />
     </div>
   );
 }

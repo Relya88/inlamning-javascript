@@ -111,3 +111,11 @@
   background-color: #ccc;
   border: 4px solid #e9e9e9;
 }
+
+.whychooseus-section.cream {
+  background-color: var(--color-bg-cream);
+}
+
+.whychooseus-section.white {
+  background-color: var(--color-bg-light);
+}

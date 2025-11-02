@@ -5,11 +5,10 @@ import cleaningIcon from "../assets/icons/cleaning-icon.svg";
 import clockIcon from "../assets/icons/clock-icon.svg";
 import rightImage from "../assets/images/whychooseuse-img.svg";
 
-export default function WhyChooseUsSection() {
+export default function WhyChooseUsSection({ bgColor = "cream" }) {
   return (
-    <section className="whychooseus-section">
+    <section className={`whychooseus-section ${bgColor}`}>
       <div className="whychooseus-container">
-        
         <div className="whychooseus-left">
           <p className="whychooseus-subtitle">Why Choose Us</p>
           <h2 className="whychooseus-title">
