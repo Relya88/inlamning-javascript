@@ -1,7 +1,120 @@
-.find-us-on-section {
+.finduson {
+  display: grid;
+  grid-template-columns: 51% 39%;
+  height: 599px;
   width: 100%;
-  min-height: 400px;
-  background-color: var(--color-bg-grey);
-  padding: 80px 40px;
-  text-align: center;
+  background-color: rgba(18, 55, 42, 0.8);
 }
+
+.finduson-left {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-left: 320px;
+  overflow: hidden;
+}
+
+.finduson-image {
+  height: 90%;
+  width: auto;
+  max-width: none;
+}
+
+.finduson-right {
+  background-color: #97A69A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 100px;
+}
+
+.finduson-content {
+  max-width: 520px;
+  color: var(--color-dark-green);
+  margin: 0 auto;
+  margin-left: 50px;
+}
+
+.finduson-content h3 {
+  font-family: var(--font-heading-main);
+  font-size: var(--font-xl);
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.finduson-content p {
+  font-family: var(--font-main);
+  font-size: 16px;
+  color: rgba(16, 54, 44, 0.7);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.info-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.5rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.icon {
+  width: 29px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.info-text h5 {
+  font-family: var(--font-heading-main);
+  font-weight: var(--font-weight-semibold);
+  font-size: 24px;
+  color: #10362C;
+  margin: 0;
+}
+
+.info-text p {
+  font-family: var(--font-main);
+  font-size: 16px;
+  color: #10362C;
+  margin-top: 0;
+}
+
+.social-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.social-row span {
+  font-family: var(--font-main);
+  font-size: 16px;
+  color: var(--color-dark-green);
+  white-space: nowrap;
+}
+
+.social-row .line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: rgba(18, 55, 42, 0.4);
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  transition: transform var(--transition-fast);
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
