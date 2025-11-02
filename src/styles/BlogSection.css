@@ -1,0 +1,122 @@
+@import "./Variables.css";
+
+.blog-section {
+  background-color: var(--color-bg-light);
+  padding: var(--section-padding-y) 0;
+  color: var(--color-text-dark);
+}
+
+.blog-section .container {
+  max-width: var(--site-max);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 60px;
+  margin-bottom: 0px;
+  flex-wrap: nowrap;
+}
+
+.section-label {
+  color: var(--color-accent-yellow);
+  font-family: var(--font-heading-main);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-medium);
+}
+
+.section-left h2 {
+  font-family: var(--font-heading-main);
+  font-size: 48px;
+  color: var(--color-dark-green);
+  line-height: 1.2;
+  max-width: 620px;
+  margin-top: 0px;
+  margin-bottom: 0;
+}
+
+.section-description {
+  font-family: var(--font-main);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-medium);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  max-width: 700px;
+  margin-bottom: 0;
+}
+
+
+.blog-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.blog-card {
+  width: 430px;
+  height: 558px;
+  background-color: var(--color-dark-green);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  color: var(--color-text-light);
+  overflow: hidden;
+  padding: 25px 25px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.blog-image {
+  width: 380px;
+  height: 254px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+
+.blog-info {
+  padding: var(--spacing-medium);
+  margin-right: 20px;
+}
+
+.blog-date {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small);
+  font-family: var(--font-main);
+  font-size: var(--font-small);
+  margin-bottom: var(--spacing-small);
+}
+
+.blog-date img {
+  width: 14px;
+  height: 14px;
+}
+
+.blog-info h3 {
+  font-family: var(--font-heading-main);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-medium);
+  margin-bottom: var(--spacing-small);
+}
+
+.blog-info p {
+  font-family: var(--font-main);
+  font-size: var(--font-small);
+  color: var(--color-bg-cream);
+  margin-bottom: 50px;
+}
+
+.blog-info a {
+  font-family: var(--font-heading-main);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-small);
+  color: var(--color-accent-yellow);
+  text-decoration: none;
+}
