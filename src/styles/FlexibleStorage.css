@@ -1,0 +1,39 @@
+@import "./Variables.css";
+
+.flexible-storage {
+  background-color: var(--color-dark-green);
+  color: var(--color-text-light);
+  text-align: center;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  height: 350px;
+}
+
+.flexible-storage .container {
+  max-width: var(--site-max);
+  margin: 0 auto;
+}
+
+.flexible-storage h2 {
+  font-family: var(--font-heading-main);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-xl);
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.flexible-storage p {
+  font-family: var(--font-main);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-medium);
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+
+.flexible-storage button {
+  font-family: var(--font-heading-main);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-button);
+  width: 128px;
+  height: 46px;
+}

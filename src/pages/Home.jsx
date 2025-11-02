@@ -11,6 +11,7 @@ import "../styles/ServicesSection.css";
 import "../styles/TestimonialsSection.css";
 import "../styles/WhyChooseUsSection.css";
 import PricingSection from "../components/PricingSection";
+import FlexibleStorage from "../components/FlexibleStorage";
 
 // Här har jag valt att returnera samtliga sektioner som ska synas på Home-page. De är länkade med mina komponenter inuti "components"-mappen. Tar jag bort exempelvis <HeroSection /> nedan så kommer min HeroSection.jsx inte fungera/synas på min Home-sida.
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <TestimonialsSection />
       <WhyChooseUsSection />
       <PricingSection />
+      <FlexibleStorage />
     </div>
   );
 }
