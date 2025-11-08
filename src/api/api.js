@@ -32,3 +32,11 @@ export async function getBlogs() {
     return [];
   }
 }
+
+export async function getFaqs() {
+  const response = await fetch("https://win25-jsf-assignment.azurewebsites.net/api/faqs");
+  if (!response.ok) {
+    throw new Error("Failed to fetch FAQs");
+  }
+  return await response.json();
+}

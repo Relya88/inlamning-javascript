@@ -1,8 +1,9 @@
 import PageHero from "../components/Pagehero";
 import GetInTouchSection from "../components/GetInTouchSection";
 import FindUsOnSection from "../components/FindUsOnSection";
-import "../styles/Contact.css";
 import SubscribeSection from "../components/SubscribeSection";
+import FaqSection from "../components/FaqSection";
+import "../styles/Contact.css";
 
 export default function Contact() {
   return (
@@ -14,6 +15,7 @@ export default function Contact() {
       />
       <GetInTouchSection />
       <FindUsOnSection />
+      <FaqSection />
       <SubscribeSection />
     </div>
   );
