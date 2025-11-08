@@ -1,8 +1,10 @@
 import "../styles/PageHero.css";
 
-// En återanvändbar hero för varje sida. Jag importerar denna på de olika sidorna, så som About Us, Contact Us, med mera, för att få en enhetlig "Hero".
+// En återanvändbar hero för varje sida. Importerar den på de olika sidorna, 
+// så som About Us, Contact Us, m.m, för att få en enhetlig "Hero".
 // Den enda Hero-delen som är unik, är "HeroSection.jsx" och den laddas in till Home.jsx.
-// Men denna är en generell för övriga sidor.
+// Men just denna är en generell för övriga sidor.
+
 export default function PageHero({ title, description }) {
   return (
     <section className="page-hero">

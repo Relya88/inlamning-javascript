@@ -13,7 +13,9 @@ function BlogSection() {
     }
     fetchBlogs();
   }, []);
-
+// såg till att id, created, title, description och imageUrl skulle hämtas från api:et
+// tog hjälp av ChatGPT för att lägga till toLocaleDateString för att få rätt datumformat
+// och att korta ner bloggtexten till 120 tecken med "slice"-funktionen
   return (
 <section className="blog-section">
   <div className="container">
@@ -30,6 +32,7 @@ function BlogSection() {
         </p>
       </div>
     </div>
+  
     <div className="blog-cards">
       {blogs.map((blog) => (
         <div className="blog-card" key={blog.id}>

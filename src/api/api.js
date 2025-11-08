@@ -1,3 +1,6 @@
+
+//skapade en separat fil för api:erna för att ha alla samlade på samma ställe
+
 export async function getTestimonials() {
   try {
     const response = await fetch(

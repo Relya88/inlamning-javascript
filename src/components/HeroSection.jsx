@@ -2,8 +2,8 @@ import "../styles/HeroSection.css";
 import HeroImage from "../assets/images/Rectangle2.svg";
 
 
-// "export default function" betyder att denna fil skickar ut (exporterar) funktionen HeroSection, så att andra filer kan använda den. 
-// I detta fall kan t.ex. Home.jsx importera och visa denna HeroSection på sidan genom att kalla på funktionen.
+// exporterar med funktionen HeroSection med "export default function", så att andra filer kan använda den. 
+// I det här fallet kan t.ex. Home.jsx importera och visa denna HeroSection på sidan genom att kalla på funktionen.
 // Med andra ord så pratar den här filen med olika "pages", om jag väljer att lägga till dem där
 export default function HeroSection() {
   return (

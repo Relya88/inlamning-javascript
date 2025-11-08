@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 
-/* ------ vänstra sidan  ----- */
+/* den vänstra sidan */
 .about-left,
 .about-right {
   display: flex;
@@ -75,7 +75,7 @@
   margin: 4px 0 0;
 }
 
-/* ----- högra sidan ------ */
+/* Den högra sidan */
 .about-right {
   padding-left: 60px;
   margin-right: 100px;

@@ -13,7 +13,7 @@ import "../styles/WhyChooseUsSection.css";
 export default function About() {
   return (
     <div className="about">
-      {/* Tack vare Pagehero.jsx kan jag importera PageHero här för att få enhetliga Hero-bilder på samtliga sidor */}
+      {/* kan med hjälp av min Pagehero.jsx importera PageHero här för att få enhetliga Hero-bilder på samtliga sidor */}
       <PageHero
         title="About Us"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis."

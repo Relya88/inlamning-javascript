@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
-// Skrev enligt Hans video så att BrowserRoutern styr jag vilka Routes (sidor) som ska fungera i webbläsaren. 
+// Här har jag lagt in min BrowserRoutern som styr vilka Routes (sidor) som ska fungera i webbläsaren. 
 // Satte navbar och footer utanför Routes gör att de syns på samtliga sidor då de är konstanta.
 function App() {
   

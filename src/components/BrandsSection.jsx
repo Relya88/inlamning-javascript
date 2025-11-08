@@ -5,6 +5,7 @@ import Logo3 from "../assets/images/Logoipsum3.svg";
 import Logo4 from "../assets/images/Logoipsum4.svg";
 import Logo5 from "../assets/images/Logoipsum5.svg";
 
+//tagit koden från min siliconuppgift, dock utan (href) för att länka de
 
 export default function BrandsSection() {
   return (

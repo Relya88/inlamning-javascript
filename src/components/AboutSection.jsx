@@ -28,7 +28,7 @@ export default function AboutSection() {
         </div>
       </div>
 
-      {/* den högra sidan med rubriker, text, vision/mission, knappar */}
+      {/* den högra sidan med rubriker, text, vision/mission och knappar */}
       <div className="about-right">
         <h4 className="about-subtitle">About Us</h4>
         <h2 className="about-title">

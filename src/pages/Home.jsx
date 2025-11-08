@@ -15,7 +15,9 @@ import FlexibleStorage from "../components/FlexibleStorage";
 import BlogSection from "../components/BlogSection";
 import SubscribeSection from "../components/SubscribeSection";
 
-// Här har jag valt att returnera samtliga sektioner som ska synas på Home-page. De är länkade med mina komponenter inuti "components"-mappen. Tar jag bort exempelvis <HeroSection /> nedan så kommer min HeroSection.jsx inte fungera/synas på min Home-sida.
+// Valt att returnera samtliga sektioner som ska synas på Home-page. 
+// De är länkade med mina komponenter inuti "components"-mappen. 
+// Tar jag bort exempelvis <HeroSection /> nedan så kommer min HeroSection.jsx inte fungera/synas på min Home-sida.
 export default function Home() {
   return (
     <div className="home">
