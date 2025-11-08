@@ -40,3 +40,21 @@ export async function getFaqs() {
   }
   return await response.json();
 }
+
+// Min POST för Subscribe
+
+export const subscribe = async (email) => {
+  try {
+    const response = await fetch("https://win25-jsf-assignment.azurewebsites.net/api/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+
+    if (!response.ok) throw new Error("Failed to subscribe");
+    return await response.json();
+  } catch (error) {
+    console.error("Error subscribing:", error);
+    throw error;
+  }
+};
