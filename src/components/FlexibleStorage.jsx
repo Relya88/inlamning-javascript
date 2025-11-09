@@ -13,15 +13,26 @@ function FlexibleStorage() {
   };
 
   return (
-    <section className="flexible-storage">
+    <section
+      className="flexible-storage"
+      aria-labelledby="flexible-storage-heading"
+      role="region"
+    >
       <div className="container">
-        <h2>Looking for Secure and Flexible Storage? Find Your Perfect Fit With Us.</h2>
+        <h2 id="flexible-storage-heading">
+          Looking for Secure and Flexible Storage? Find Your Perfect Fit With Us.
+        </h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie
           nisi sed dui lacinia gravida. Nulla quis nulla leo. Mauris ac blandit nisi
           non sodales augue. Phasellus eget elit gravida.
         </p>
-        <button onClick={handleBookingClick}>Book Now</button>
+        <button
+          onClick={handleBookingClick}
+          aria-label="Book your storage unit now"
+        >
+          Book Now
+        </button>
       </div>
     </section>
   );

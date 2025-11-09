@@ -3,28 +3,25 @@ import footerArrow from "../assets/icons/footer-arrow.svg";
 
 export default function Footer() {
   return (
-    <footer>
-      <div className="footer-container">
-        <div className="footer-left">
-          <p>© 2025 StorAid, All rights reserved.</p>
-        </div>
+<footer role="contentinfo">
+  <div className="footer-container">
+    <p className="footer-copy">© 2025 StorAid, All rights reserved.</p>
 
-        <div className="footer-right">
-          <a href="#">
-            <img src={footerArrow} className="arrow-icon" alt="" aria-hidden="true" />
-            <span>Terms & Conditions</span>
-          </a>
-          <a href="#">
-            <img src={footerArrow} className="arrow-icon" alt="" aria-hidden="true" />
-            <span>Privacy Policy</span>
-          </a>
-        </div>
-      </div>
-    </footer>
+    <ul className="footer-links" aria-label="Legal links">
+      <li>
+        <a href="#">
+          <img src={footerArrow} className="arrow-icon" alt="" aria-hidden="true" />
+          <span>Terms & Conditions</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src={footerArrow} className="arrow-icon" alt="" aria-hidden="true" />
+          <span>Privacy Policy</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
   );
 }
-
-
-
-
-

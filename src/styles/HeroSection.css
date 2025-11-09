@@ -1,37 +1,32 @@
 .hero {
+  width: 100%;
   height: 715px;
   background-color: var(--color-bg-light);
-  width: 100%;
 }
 
 .hero-panel {
-  height: 100%;
   width: 100%;
-  max-width: var(--site-max-full);
-  margin: 0 auto;
+  height: 100%;
   background-color: rgba(18, 55, 42, 0.8);
   display: flex;
   justify-content: center;
   align-items: flex-end;
   box-shadow: var(--shadow-medium);
-
 }
 
 .hero-content {
   width: 100%;
   max-width: var(--site-max);
   margin: 0 auto;
+  padding: 0 var(--section-padding-x);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  color: white;
-  padding: 0 var(--section-padding-x);
+  color: var(--color-text-light);
 }
 
 .hero-text {
   max-width: 735px;
-  padding-top: 28px;
-  padding-bottom: 28px;
   margin-bottom: 150px;
 }
 
@@ -40,7 +35,7 @@
   line-height: 24px;
   font-weight: 600;
   color: var(--color-accent-yellow);
-  margin: 0 0 10px 0;
+  margin-bottom: 10px;
 }
 
 .hero-text h1 {
@@ -48,32 +43,35 @@
   font-weight: 700;
   font-size: var(--font-xxl);
   line-height: 1.1;
-  margin: 0 0 16px 0;
+  margin-bottom: 16px;
   color: var(--color-text-light);
 }
 
 .hero-description {
   font-size: 16px;
   line-height: 24px;
-  margin: 0 0 18px 0;
   color: #E8EFEA;
+  margin-bottom: 18px;
 }
 
 .discover-btn {
   background-color: var(--color-accent-yellow);
   color: var(--color-dark-green);
   border: none;
-  padding: 10px 22px;
+  padding: 12px 24px;
   font-weight: 700;
   border-radius: var(--border-radius);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
   box-shadow: var(--shadow-medium);
 }
 
-.discover-btn:hover {
+.discover-btn:hover,
+.discover-btn:focus-visible {
   background-color: var(--color-accent-green);
   color: var(--color-text-light);
+  outline: 2px solid var(--color-text-light);
+  outline-offset: 2px;
 }
 
 .hero-image {
@@ -84,7 +82,5 @@
   width: 420px;
   height: auto;
   display: block;
-  margin-bottom: 0;
-  align-self: flex-end;
   border-radius: var(--border-radius);
 }

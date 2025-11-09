@@ -1,3 +1,5 @@
+@import "./Variables.css";
+
 .finduson {
   display: grid;
   grid-template-columns: 51% 39%;
@@ -40,6 +42,7 @@
   font-size: var(--font-xl);
   margin-bottom: 1rem;
   margin-top: 0;
+  color: var(--color-dark-green);
 }
 
 .finduson-content p {
@@ -83,6 +86,16 @@
   margin-top: 0;
 }
 
+.info-text a {
+  color: #10362C;
+  text-decoration: none;
+}
+
+.info-text a:hover,
+.info-text a:focus-visible {
+  text-decoration: underline;
+}
+
 .social-row {
   display: flex;
   align-items: center;
@@ -108,13 +121,20 @@
   gap: 1rem;
 }
 
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .social-icons img {
   width: 24px;
   height: 24px;
   transition: transform var(--transition-fast);
 }
 
-.social-icons img:hover {
+.social-icons img:hover,
+.social-icons img:focus-visible {
   transform: scale(1.1);
+  outline: none;
 }
-

@@ -13,8 +13,8 @@ export default function BookingSection() {
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
 
-  const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ-]{2,}$/; // Namn måste innehålla bokstäver och minst 2 tecken
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Supersimpel e-post validering för a@a.se
+  const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ-]{2,}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -26,8 +26,7 @@ export default function BookingSection() {
     e.preventDefault();
     let newErrors = {};
 
-    if (!nameRegex.test(formData.name))
-      newErrors.name = "Name is too short";
+    if (!nameRegex.test(formData.name)) newErrors.name = "Name is too short";
     if (!emailRegex.test(formData.email))
       newErrors.email = "Enter a valid email address";
     if (formData.selectedUnit.trim().length < 1)
@@ -40,10 +39,8 @@ export default function BookingSection() {
     if (Object.keys(newErrors).length === 0) {
       try {
         const response = await postBooking(formData);
-
-        // ✅ Vi kontrollerar att svaret innehåller "success" och "message"
         if (response.success) {
-          setSuccessMessage(response.message); // Visa API-meddelandet
+          setSuccessMessage(response.message);
           setFormData({
             name: "",
             email: "",
@@ -62,107 +59,146 @@ export default function BookingSection() {
   };
 
   return (
-  <section id="booking-section" className="booking-section">
-    <div className="booking-container">
-      <div className="booking-left">
-        <p className="booking-subtitle">Booking Unit</p>
-        <h2 className="booking-title">
-          Book Your Storage Unit Now & Simplify Your Life!
-        </h2>
-        <div className="map-placeholder"></div>
-      </div>
+    <section
+      id="booking-section"
+      className="booking-section"
+      aria-labelledby="booking-heading"
+      role="form"
+    >
+      <div className="booking-container">
+        <div className="booking-left">
+          <p className="booking-subtitle">Booking Unit</p>
+          <h2 id="booking-heading" className="booking-title">
+            Book Your Storage Unit Now & Simplify Your Life!
+          </h2>
+          <div
+            className="map-placeholder"
+            role="img"
+            aria-label="Map showing available storage locations"
+          ></div>
+        </div>
 
-      {/* Högerkolumn med beskrivning + vit box */}
-      <div className="booking-right-column">
-        <p className="booking-description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-          molestie nisl sed dui lacinia gravida. Nulla quis nulla leo. Mauris
-          ac blandit nisi non sodales augue. Phasellus eget elit gravida.
-        </p>
+        <div className="booking-right-column">
+          <p className="booking-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+            molestie nisl sed dui lacinia gravida. Nulla quis nulla leo. Mauris
+            ac blandit nisi non sodales augue. Phasellus eget elit gravida.
+          </p>
 
-        <div className="booking-right">
-          <form className="booking-form" onSubmit={handleSubmit} noValidate>
-            <div className="form-row">
+          <div className="booking-right">
+            <form
+              className="booking-form"
+              onSubmit={handleSubmit}
+              noValidate
+              aria-describedby="booking-heading"
+            >
+              <div className="form-row">
+                <div className="form-group">
+                  <div className="label-row">
+                    <label htmlFor="name">
+                      Your Name <span aria-hidden="true">*</span>
+                    </label>
+                    {errors.name && (
+                      <p className="error-text" aria-live="assertive" role="alert">
+                        {errors.name}
+                      </p>
+                    )}
+                  </div>
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    aria-required="true"
+                    aria-invalid={errors.name ? "true" : "false"}
+                  />
+                </div>
+
+                <div className="form-group">
+                  <div className="label-row">
+                    <label htmlFor="email">
+                      Email <span aria-hidden="true">*</span>
+                    </label>
+                    {errors.email && (
+                      <p className="error-text" aria-live="assertive" role="alert">
+                        {errors.email}
+                      </p>
+                    )}
+                  </div>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    aria-required="true"
+                    aria-invalid={errors.email ? "true" : "false"}
+                  />
+                </div>
+              </div>
+
               <div className="form-group">
                 <div className="label-row">
-                  <label htmlFor="name">
-                    Your Name <span>*</span>
+                  <label htmlFor="selectedUnit">
+                    Choose Unit <span aria-hidden="true">*</span>
                   </label>
-                  {errors.name && <p className="error-text">{errors.name}</p>}
+                  {errors.selectedUnit && (
+                    <p className="error-text" aria-live="assertive" role="alert">
+                      {errors.selectedUnit}
+                    </p>
+                  )}
                 </div>
                 <input
                   type="text"
-                  id="name"
-                  placeholder="Your Name"
-                  value={formData.name}
+                  id="selectedUnit"
+                  placeholder="Choose Unit"
+                  value={formData.selectedUnit}
                   onChange={handleChange}
+                  aria-required="true"
+                  aria-invalid={errors.selectedUnit ? "true" : "false"}
                 />
               </div>
 
               <div className="form-group">
                 <div className="label-row">
-                  <label htmlFor="email">
-                    Email <span>*</span>
+                  <label htmlFor="purpose">
+                    Storage purpose <span aria-hidden="true">*</span>
                   </label>
-                  {errors.email && <p className="error-text">{errors.email}</p>}
+                  {errors.purpose && (
+                    <p className="error-text" aria-live="assertive" role="alert">
+                      {errors.purpose}
+                    </p>
+                  )}
                 </div>
-                <input
-                  type="text"
-                  id="email"
-                  placeholder="Email"
-                  value={formData.email}
+                <textarea
+                  id="purpose"
+                  placeholder="Describe your storage purpose so that we can match your request"
+                  value={formData.purpose}
                   onChange={handleChange}
-                />
+                  aria-required="true"
+                  aria-invalid={errors.purpose ? "true" : "false"}
+                ></textarea>
               </div>
-            </div>
 
-            <div className="form-group">
-              <div className="label-row">
-                <label htmlFor="selectedUnit">
-                  Choose Unit <span>*</span>
-                </label>
-                {errors.selectedUnit && (
-                  <p className="error-text">{errors.selectedUnit}</p>
+              <div className="submit-row">
+                <button
+                  type="submit"
+                  className="submit-btn"
+                  aria-label="Submit booking form"
+                >
+                  Book Unit
+                </button>
+                {successMessage && (
+                  <p className="success-message" aria-live="polite" role="status">
+                    {successMessage}
+                  </p>
                 )}
               </div>
-              <input
-                type="text"
-                id="selectedUnit"
-                placeholder="Choose Unit"
-                value={formData.selectedUnit}
-                onChange={handleChange}
-              />
-            </div>
-
-            <div className="form-group">
-              <div className="label-row">
-                <label htmlFor="purpose">
-                  Storage purpose <span>*</span>
-                </label>
-                {errors.purpose && (
-                  <p className="error-text">{errors.purpose}</p>
-                )}
-              </div>
-              <textarea
-                id="purpose"
-                placeholder="Describe your storage purpose so that we can match your request"
-                value={formData.purpose}
-                onChange={handleChange}
-              ></textarea>
-            </div>
-
-            <div className="submit-row">
-              <button type="submit" className="submit-btn">
-                Book Unit
-              </button>
-              {successMessage && (
-                <p className="success-message">{successMessage}</p>
-              )}
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
 }

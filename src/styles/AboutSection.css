@@ -121,7 +121,8 @@
   transition: border-color var(--transition-fast);
 }
 
-.info-box:hover {
+.info-box:hover,
+.info-box:focus-within {
   border-color: var(--color-accent-yellow);
 }
 
@@ -156,6 +157,15 @@
   font-weight: 700;
   border-radius: var(--border-radius);
   cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.discover-btn:hover,
+.discover-btn:focus-visible {
+  background-color: var(--color-accent-green);
+  color: var(--color-text-light);
+  outline: 2px solid var(--color-dark-green);
+  outline-offset: 2px;
 }
 
 .contact-info {
@@ -190,4 +200,14 @@
   font-size: 16px;
   margin: 0;
   color: var(--color-dark-green);
+}
+
+.contact-number a {
+  color: var(--color-dark-green);
+  text-decoration: none;
+}
+
+.contact-number a:hover,
+.contact-number a:focus-visible {
+  text-decoration: underline;
 }

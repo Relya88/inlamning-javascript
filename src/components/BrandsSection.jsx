@@ -9,13 +9,24 @@ import Logo5 from "../assets/images/Logoipsum5.svg";
 
 export default function BrandsSection() {
   return (
-    <section className="brands-section">
-      <div className="brands-container">
-        <img src={Logo1} alt="Brand logo 1" />
-        <img src={Logo2} alt="Brand logo 2" />
-        <img src={Logo3} alt="Brand logo 3" />
-        <img src={Logo4} alt="Brand logo 4" />
-        <img src={Logo5} alt="Brand logo 5" />
+    <section
+      className="brands-section"
+      aria-labelledby="brands-heading"
+      role="region"
+    >
+      <h2 id="brands-heading" className="visually-hidden">
+        Partner brands
+      </h2>
+      <div
+        className="brands-container"
+        role="list"
+        aria-label="List of partner brand logos"
+      >
+        <img src={Logo1} alt="Logo of partner brand 1" role="listitem" />
+        <img src={Logo2} alt="Logo of partner brand 2" role="listitem" />
+        <img src={Logo3} alt="Logo of partner brand 3" role="listitem" />
+        <img src={Logo4} alt="Logo of partner brand 4" role="listitem" />
+        <img src={Logo5} alt="Logo of partner brand 5" role="listitem" />
       </div>
     </section>
   );

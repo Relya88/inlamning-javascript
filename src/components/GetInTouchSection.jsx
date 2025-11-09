@@ -31,9 +31,9 @@ export default function GetInTouchSection() {
       newErrors.name = "Name is too short";
     if (!emailRegex.test(formData.email))
       newErrors.email = "Enter a valid email address";
-    if (formData.subject.trim().length < 1) // Mindre än 1 tecken är ej giltigt här, så man måste skriva någonting
+    if (formData.subject.trim().length < 1)
       newErrors.subject = "This field is required";
-    if (formData.comments.trim().length < 20) // Här satte jag minst 20 tecken för en kommentar
+    if (formData.comments.trim().length < 20)
       newErrors.comments = "Minimum 20 characters required";
 
     setErrors(newErrors);
@@ -60,28 +60,49 @@ export default function GetInTouchSection() {
   };
 
   return (
-    <section className="getintouch-section">
+    <section
+      className="getintouch-section"
+      aria-labelledby="contact-title"
+      aria-describedby="contact-description"
+      role="form"
+    >
       <div className="getintouch-container">
         <div className="getintouch-left">
           <p className="getintouch-subtitle">Get in Touch</p>
-          <h2 className="getintouch-title">
+          <h2 id="contact-title" className="getintouch-title">
             Get Personalized Assistance – Contact Us
           </h2>
-          <p className="getintouch-description">
+          <p
+            id="contact-description"
+            className="getintouch-description"
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
             tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo
           </p>
-          <div className="map-placeholder"></div>
+          <div
+            className="map-placeholder-getintouch"
+            role="img"
+            aria-label="Map showing our office location"
+          ></div>
         </div>
 
         <div className="getintouch-right">
-          <form className="contact-form" onSubmit={handleSubmit} noValidate>
+          <form
+            className="contact-form"
+            onSubmit={handleSubmit}
+            noValidate
+            aria-describedby="contact-description"
+          >
             <div className="form-group">
               <div className="label-row">
                 <label htmlFor="name">
-                  Your Name <span>*</span>
+                  Your Name <span aria-hidden="true">*</span>
                 </label>
-                {errors.name && <p className="error-text">{errors.name}</p>}
+                {errors.name && (
+                  <p className="error-text" aria-live="assertive" role="alert">
+                    {errors.name}
+                  </p>
+                )}
               </div>
               <input
                 type="text"
@@ -89,6 +110,8 @@ export default function GetInTouchSection() {
                 placeholder="Your name"
                 value={formData.name}
                 onChange={handleChange}
+                aria-required="true"
+                aria-invalid={errors.name ? "true" : "false"}
               />
             </div>
 
@@ -96,16 +119,22 @@ export default function GetInTouchSection() {
               <div className="form-group">
                 <div className="label-row">
                   <label htmlFor="email">
-                    Email <span>*</span>
+                    Email <span aria-hidden="true">*</span>
                   </label>
-                  {errors.email && <p className="error-text">{errors.email}</p>}
+                  {errors.email && (
+                    <p className="error-text" aria-live="assertive" role="alert">
+                      {errors.email}
+                    </p>
+                  )}
                 </div>
                 <input
-                  type="text"
+                  type="email"
                   id="email"
                   placeholder="Email"
                   value={formData.email}
                   onChange={handleChange}
+                  aria-required="true"
+                  aria-invalid={errors.email ? "true" : "false"}
                 />
               </div>
 
@@ -113,15 +142,18 @@ export default function GetInTouchSection() {
                 <div className="label-row">
                   <label htmlFor="telephone">Telephone</label>
                   {errors.telephone && (
-                    <p className="error-text">{errors.telephone}</p>
+                    <p className="error-text" aria-live="assertive" role="alert">
+                      {errors.telephone}
+                    </p>
                   )}
                 </div>
                 <input
-                  type="text"
+                  type="tel"
                   id="telephone"
                   placeholder="Telephone"
                   value={formData.telephone}
                   onChange={handleChange}
+                  aria-invalid={errors.telephone ? "true" : "false"}
                 />
               </div>
             </div>
@@ -129,10 +161,12 @@ export default function GetInTouchSection() {
             <div className="form-group">
               <div className="label-row">
                 <label htmlFor="subject">
-                  Subject <span>*</span>
+                  Subject <span aria-hidden="true">*</span>
                 </label>
                 {errors.subject && (
-                  <p className="error-text">{errors.subject}</p>
+                  <p className="error-text" aria-live="assertive" role="alert">
+                    {errors.subject}
+                  </p>
                 )}
               </div>
               <input
@@ -141,16 +175,20 @@ export default function GetInTouchSection() {
                 placeholder="How can we help you"
                 value={formData.subject}
                 onChange={handleChange}
+                aria-required="true"
+                aria-invalid={errors.subject ? "true" : "false"}
               />
             </div>
 
             <div className="form-group">
               <div className="label-row">
                 <label htmlFor="comments">
-                  Comments / Questions <span>*</span>
+                  Comments / Questions <span aria-hidden="true">*</span>
                 </label>
                 {errors.comments && (
-                  <p className="error-text">{errors.comments}</p>
+                  <p className="error-text" aria-live="assertive" role="alert">
+                    {errors.comments}
+                  </p>
                 )}
               </div>
               <textarea
@@ -158,15 +196,23 @@ export default function GetInTouchSection() {
                 placeholder="Comments"
                 value={formData.comments}
                 onChange={handleChange}
+                aria-required="true"
+                aria-invalid={errors.comments ? "true" : "false"}
               ></textarea>
             </div>
 
             <div className="submit-row">
-              <button type="submit" className="submit-btn">
+              <button
+                type="submit"
+                className="submit-btn"
+                aria-label="Submit contact form"
+              >
                 Submit
               </button>
               {successMessage && (
-                <p className="success-message">{successMessage}</p>
+                <p className="success-message" role="status" aria-live="polite">
+                  {successMessage}
+                </p>
               )}
             </div>
           </form>

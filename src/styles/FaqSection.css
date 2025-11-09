@@ -20,7 +20,6 @@
 
 .faq-left {
   flex: 1;
-  max-width: none;
   padding-right: 40px;
 }
 
@@ -32,13 +31,12 @@
 }
 
 .faq-title {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-heading-main);
   font-weight: 700;
   font-size: 52px;
   color: var(--color-dark-green);
   margin: 0 0 var(--spacing-medium);
 }
-
 
 .faq-description {
   color: var(--color-text-dark);
@@ -70,11 +68,16 @@
   overflow: hidden;
 }
 
+.faq-item:focus-visible {
+  outline: 3px solid var(--color-accent-yellow);
+  outline-offset: 3px;
+}
+
 .faq-question {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-heading-main);
   font-weight: 600;
   font-size: 17px;
   color: var(--color-dark-green);
@@ -108,4 +111,3 @@
   padding: 20px 24px;
   position: relative;
 }
-

@@ -63,7 +63,7 @@
 }
 
 .booking-right {
-  background-color: #fdfaf1;
+  background-color: var(--color-bg-cream);
   border-radius: 10px;
   padding: 40px;
   height: auto;
@@ -90,7 +90,7 @@
 }
 
 .error-text {
-  color: red;
+  color: #d32f2f;
   font-family: var(--font-main);
   font-size: 13px;
   margin: 0;
@@ -119,6 +119,12 @@ textarea {
   outline: none;
 }
 
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-accent-yellow);
+  outline-offset: 2px;
+}
+
 textarea {
   resize: none;
   height: 120px;
@@ -145,6 +151,11 @@ textarea {
 
 .submit-btn:hover {
   background-color: #e6b800;
+}
+
+.submit-btn:focus-visible {
+  outline: 3px solid var(--color-dark-green);
+  outline-offset: 3px;
 }
 
 .submit-row {

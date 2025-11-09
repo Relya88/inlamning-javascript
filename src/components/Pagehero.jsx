@@ -7,9 +7,9 @@ import "../styles/PageHero.css";
 
 export default function PageHero({ title, description }) {
   return (
-    <section className="page-hero">
-      <div className="page-hero-content">
-        <h1>{title}</h1>
+    <section className="page-hero" aria-labelledby="page-hero-title">
+      <div className="page-hero-content container">
+        <h1 id="page-hero-title">{title}</h1>
         {description && <p>{description}</p>}
       </div>
     </section>

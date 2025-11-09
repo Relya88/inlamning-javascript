@@ -15,7 +15,6 @@ export default function SubscribeSection() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Kollar att mejladressen har rätt format, alltså något som liknar "namn@exempel.se"
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(email)) {
@@ -36,34 +35,51 @@ export default function SubscribeSection() {
   };
 
   return (
-    <section className="subscribe-section">
+    <section
+      className="subscribe-section"
+      aria-labelledby="subscribe-heading"
+      role="region"
+    >
       <div className="container">
         <div className="subscribe-left">
-          <h2>Subscribe Our Newsletter</h2>
+          <h2 id="subscribe-heading">Subscribe to Our Newsletter</h2>
           <p>
-            Subscribe to our newsletter to receive early discount offers, updates and info
+            Subscribe to our newsletter to receive early discount offers, updates and info.
           </p>
         </div>
 
-        <form className="subscribe-form" noValidate onSubmit={handleSubmit}>
-          <div className="input-wrapper">
-            <input
-              type="text"
-              placeholder="Enter your email *"
-              value={email}
-              onChange={handleChange}
-              className={error ? "error" : ""}
-            />
+        <form
+          className="subscribe-form"
+          noValidate
+          onSubmit={handleSubmit}
+          aria-label="Newsletter subscription form"
+        >
+          <input
+            type="email"
+            id="subscribe-email"
+            placeholder="Enter your email *"
+            value={email}
+            onChange={handleChange}
+            className={error ? "error" : ""}
+            aria-required="true"
+            aria-invalid={error ? "true" : "false"}
+          />
+          <button
+            type="submit"
+            aria-label="Submit your email to subscribe"
+          >
+            Submit
+          </button>
 
-            {/* Den här delen säkerställer att bara en text visas. Antingen error-text eller tack för registrering */}
-            {error ? (
-              <p className="error-message">{error}</p>
-            ) : success ? (
-              <p className="success-message">Thank you for subscribing!</p>
-            ) : null}
-          </div>
-
-          <button type="submit">Submit</button>
+          {error ? (
+            <p className="error-message" role="alert" aria-live="assertive">
+              {error}
+            </p>
+          ) : success ? (
+            <p className="success-message" role="status" aria-live="polite">
+              Thank you for subscribing!
+            </p>
+          ) : null}
         </form>
       </div>
     </section>

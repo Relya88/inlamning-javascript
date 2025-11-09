@@ -7,15 +7,24 @@ import rightImage from "../assets/images/whychooseuse-img.svg";
 
 export default function WhyChooseUsSection({ bgColor = "cream" }) {
   return (
-    <section className={`whychooseus-section ${bgColor}`}>
+    <section
+      className={`whychooseus-section ${bgColor}`}
+      aria-labelledby="whychooseus-title"
+      role="region"
+    >
       <div className="whychooseus-container">
         <div className="whychooseus-left">
           <p className="whychooseus-subtitle">Why Choose Us</p>
-          <h2 className="whychooseus-title">
+          <h2 id="whychooseus-title" className="whychooseus-title">
             Choose Us for Exceptional <br /> Storage Solutions
           </h2>
-          <div className="features-list">
-            <div className="feature-item">
+
+          <div
+            className="features-list"
+            role="list"
+            aria-label="Reasons to choose our storage services"
+          >
+            <div className="feature-item" role="listitem">
               <div className="feature-icon">
                 <img src={lockIcon} alt="Security icon" />
               </div>
@@ -29,7 +38,7 @@ export default function WhyChooseUsSection({ bgColor = "cream" }) {
               </div>
             </div>
 
-            <div className="feature-item">
+            <div className="feature-item" role="listitem">
               <div className="feature-icon">
                 <img src={moneyIcon} alt="Money icon" />
               </div>
@@ -43,7 +52,7 @@ export default function WhyChooseUsSection({ bgColor = "cream" }) {
               </div>
             </div>
 
-            <div className="feature-item">
+            <div className="feature-item" role="listitem">
               <div className="feature-icon">
                 <img src={cleaningIcon} alt="Cleaning icon" />
               </div>
@@ -57,7 +66,7 @@ export default function WhyChooseUsSection({ bgColor = "cream" }) {
               </div>
             </div>
 
-            <div className="feature-item">
+            <div className="feature-item" role="listitem">
               <div className="feature-icon">
                 <img src={clockIcon} alt="Clock icon" />
               </div>

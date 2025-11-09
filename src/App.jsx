@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -12,54 +11,27 @@ import PageNotFound from "./pages/PageNotFound";
 function App() {
   return (
     <BrowserRouter>
-      <AppContent />
+      <div className="app-wrapper">
+        <header>
+          <Navbar />
+        </header>
+
+        <main className="main-content" id="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/booking" element={<Booking />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </main>
+
+        <footer>
+          <Footer />
+        </footer>
+      </div>
     </BrowserRouter>
-  );
-}
-
-function AppContent() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleClick = (e) => {
-      // Kolla om användaren klickade på en button
-      const btn = e.target.closest("button");
-
-      if (btn) {
-        const hasOnClick = btn.getAttribute("onclick") || btn.onclick;
-        const isSubmit = btn.type === "submit";
-
-        // Om den inte har onClick och inte är en submit → navigera till 404
-if (!hasOnClick && !isSubmit) {
-  alert("404-navigation körs! 🎯");
-  navigate("/404");
-}
-
-      }
-    };
-
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
-  }, [navigate]);
-
-  return (
-    <div className="app-wrapper">
-      <Navbar />
-
-      <main className="main-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/404" element={<PageNotFound />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-      </main>
-
-      <Footer />
-    </div>
   );
 }
 

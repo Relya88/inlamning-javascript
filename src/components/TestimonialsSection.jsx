@@ -16,32 +16,69 @@ export default function TestimonialsSection() {
 // tog dock sen hjälp av ChatGPT för att lägga till en array med lika många platser som betyget
 // (item.rating) från apiet, så att det loopar igenom betyget och visar rätt antal stjärnor
   return (
-    <section className="testimonials-section" style={{ backgroundImage: `url(${bgImage})` }}>
-      <div className="overlay"></div>
+    <section 
+      className="testimonials-section" 
+      style={{ backgroundImage: `url(${bgImage})` }} 
+      aria-labelledby="testimonials-title"
+      role="region"
+    >
+      <div className="overlay" aria-hidden="true"></div>
 
       <div className="testimonials-content">
         <p className="testimonials-subtitle">Testimonials</p>
-        <h2 className="testimonials-title">See What Our Client Have to Say</h2>
-        <p className="testimonials-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie nisl sed dui lacinia gravida. Nulla quis nulla leo. Mauris ac blandit nisi non sodales augue. Phasellus eget elit gravida.</p>
+        <h2 id="testimonials-title" className="testimonials-title">
+          See What Our Client Have to Say
+        </h2>
+        <p className="testimonials-desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie nisl sed dui lacinia gravida. 
+          Nulla quis nulla leo. Mauris ac blandit nisi non sodales augue. Phasellus eget elit gravida.
+        </p>
 
         <div className="testimonials-grid">
           {testimonials.map((item) => (
-            <div className="testimonial-card" key={item.id}>
-              <div className="testimonial-rating">
+            <div 
+              className="testimonial-card" 
+              key={item.id}
+              role="group"
+              aria-label={`Testimonial from ${item.name}`}
+            >
+              <div 
+                className="testimonial-rating"
+                aria-label={`Rating: ${item.rating} out of 5 stars`}
+              >
                 {[...Array(item.rating)].map((_, i) => (
-                  <img key={i} src={ratingIcon} alt="star" className="rating-star" />
+                  <img 
+                    key={i} 
+                    src={ratingIcon} 
+                    alt="" 
+                    className="rating-star" 
+                    aria-hidden="true" 
+                  />
                 ))}
               </div>
-              <p className="testimonial-comment">"{item.comment}"</p>
+
+              <p className="testimonial-comment">
+                "{item.comment}"
+              </p>
+
               <div className="testimonial-footer">
                 <div className="testimonial-user">
-                  <img src={item.avatarUrl} alt={item.name} className="testimonial-avatar" />
+                  <img 
+                    src={item.avatarUrl} 
+                    alt={`Portrait of ${item.name}`} 
+                    className="testimonial-avatar" 
+                  />
                   <div>
                     <h5 className="testimonial-name">{item.name}</h5>
                     <p className="testimonial-company">{item.companyName}</p>
                   </div>
                 </div>
-                <img src={quoteIcon} alt="" aria-hidden="true" className="quote-icon" />
+                <img 
+                  src={quoteIcon} 
+                  alt="" 
+                  aria-hidden="true" 
+                  className="quote-icon" 
+                />
               </div>
             </div>
           ))}
