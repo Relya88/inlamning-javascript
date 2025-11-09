@@ -58,3 +58,32 @@ export const subscribe = async (email) => {
     throw error;
   }
 };
+
+
+//Min POST för Contact Us
+
+export async function sendContactForm(formData) {
+  try {
+    const response = await fetch("https://win25-jsf-assignment.azurewebsites.net/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        phoneNumber: formData.telephone,
+        subject: formData.subject,
+        comment: formData.comments,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to send contact form");
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error in sendContactForm:", error);
+    throw error;
+  }
+}
