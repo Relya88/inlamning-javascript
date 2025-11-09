@@ -87,3 +87,23 @@ export async function sendContactForm(formData) {
     throw error;
   }
 }
+
+// Min POST för Booking-formuläret
+
+export const postBooking = async (bookingData) => {
+  try {
+    const response = await fetch("https://win25-jsf-assignment.azurewebsites.net/api/booking", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(bookingData),
+    });
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Booking request failed:", error);
+    throw error;
+  }
+};

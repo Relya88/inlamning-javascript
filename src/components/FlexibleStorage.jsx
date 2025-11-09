@@ -1,6 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import "../styles/FlexibleStorage.css";
 
 function FlexibleStorage() {
+  const navigate = useNavigate();
+
+  const handleBookingClick = () => {
+    navigate("/booking#booking-section"); //Lade in denna så att när man trycker på "Book Now" på någon sida, så skrollar man automatiskt till bokningsformuläret
+    setTimeout(() => {
+      const section = document.getElementById("booking-section");
+      if (section) section.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
+
   return (
     <section className="flexible-storage">
       <div className="container">
@@ -10,7 +21,7 @@ function FlexibleStorage() {
           nisi sed dui lacinia gravida. Nulla quis nulla leo. Mauris ac blandit nisi
           non sodales augue. Phasellus eget elit gravida.
         </p>
-        <button>Book Now</button>
+        <button onClick={handleBookingClick}>Book Now</button>
       </div>
     </section>
   );
