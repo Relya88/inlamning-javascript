@@ -48,6 +48,8 @@ const FaqSection = () => {
             role="list"
             aria-label="Frequently asked questions and answers"
           >
+            {/* Koden visar alla frågor i FAQ-listan och gör dem klickbara så man 
+            kan öppna och stänga varje fråga, även med tangentbordet. */}
             {faqs.map((faq) => (
               <article
                 key={faq.id}

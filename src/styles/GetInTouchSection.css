@@ -87,13 +87,13 @@
   margin: 0;
 }
 
-.success-message {
+.success-message-getintouch {
   color: var(--color-dark-green);
   font-family: var(--font-main);
   font-size: 14px;
   position: absolute;
   left: 135px;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   white-space: normal;
   max-width: 330px;

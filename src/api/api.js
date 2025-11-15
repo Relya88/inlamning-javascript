@@ -1,5 +1,7 @@
 
-//skapade en separat fil för api:erna för att ha alla samlade på samma ställe
+//skapade en separat fil för api:erna för att ha alla samlade på samma ställe, mest bara för mig själv att hålla koll på
+
+//GET för testomonials, blogs och faq
 
 export async function getTestimonials() {
   try {
@@ -41,7 +43,9 @@ export async function getFaqs() {
   return await response.json();
 }
 
-// Min POST för Subscribe
+
+
+//POST för Subscribe, contact us och bookingformuläret
 
 export const subscribe = async (email) => {
   try {
@@ -60,7 +64,7 @@ export const subscribe = async (email) => {
 };
 
 
-//Min POST för Contact Us
+
 
 export async function sendContactForm(formData) {
   try {
@@ -88,7 +92,7 @@ export async function sendContactForm(formData) {
   }
 }
 
-// Min POST för Booking-formuläret
+
 
 export const postBooking = async (bookingData) => {
   try {

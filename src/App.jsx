@@ -8,6 +8,9 @@ import Services from "./pages/Services";
 import Booking from "./pages/Booking";
 import PageNotFound from "./pages/PageNotFound";
 
+// Min BrowserRouter som styr  vilka Routes (sidor) som ska fungera i webbläsaren. 
+// Satte navbar och footer utanför Routes gör att de syns på samtliga sidor då de är konstanta.
+
 function App() {
   return (
     <BrowserRouter>

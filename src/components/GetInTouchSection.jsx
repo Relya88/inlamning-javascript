@@ -23,6 +23,8 @@ export default function GetInTouchSection() {
     setSuccessMessage("");
   };
 
+  // Funktionen nedan kollar att allt i formuläret är ifyllt rätt, visar fel om något saknas, 
+  // och skickar iväg meddelandet om allt ser bra ut.
   const handleSubmit = async (e) => {
     e.preventDefault();
     let newErrors = {};
@@ -210,7 +212,7 @@ export default function GetInTouchSection() {
                 Submit
               </button>
               {successMessage && (
-                <p className="success-message" role="status" aria-live="polite">
+                <p className="success-message-getintouch" role="status" aria-live="polite">
                   {successMessage}
                 </p>
               )}

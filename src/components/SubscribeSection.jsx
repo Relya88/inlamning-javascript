@@ -2,10 +2,15 @@ import { useState } from "react";
 import { subscribe } from "../api/api";
 import "../styles/SubscribeSection.css";
 
+//Använder useState för hantering av e-post, felmeddelanden och bekräftelse av prenumeration
+//Tog hjälp av chatgpt för vissa react-delar som inte jag fick till själv
+
 export default function SubscribeSection() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+
+  //uppdaterar e-post och nollställer tidigare fel eller meddelanden som lyckats
 
   const handleChange = (e) => {
     setEmail(e.target.value);
@@ -13,15 +18,21 @@ export default function SubscribeSection() {
     setError("");
   };
 
+  //hanterar formuläret vid submit och kollar mailformatet
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    //regex för att kontrollera att e-posten har rätt format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(email)) {
-      setError("Woops. Please check your email and try again.");
+      setError("Woops! Please check your email and try again.");
       setSuccess(false);
       return;
     }
+
+    //om e-post är giligt nollställs formuläret med tackmeddelande som visas, annars visas felmeddelande 
 
     try {
       await subscribe(email);
@@ -33,6 +44,8 @@ export default function SubscribeSection() {
       setSuccess(false);
     }
   };
+
+  //formuläret med inputfältet och fel/tackmeddelanden
 
   return (
     <section
@@ -72,11 +85,11 @@ export default function SubscribeSection() {
           </button>
 
           {error ? (
-            <p className="error-message" role="alert" aria-live="assertive">
+            <p className="error-message-subscribe" role="alert" aria-live="assertive">
               {error}
             </p>
           ) : success ? (
-            <p className="success-message" role="status" aria-live="polite">
+            <p className="success-message-subscribe" role="status" aria-live="polite">
               Thank you for subscribing!
             </p>
           ) : null}

@@ -100,21 +100,21 @@
   outline-offset: 3px;
 }
 
-.error-message,
-.success-message {
+.error-message-subscribe,
+.success-message-subscribe {
   position: absolute;
-  bottom: -22px;
-  left: 4px;
+  bottom: -25px;
+  left: 5px;
   font-family: var(--font-main);
   font-size: 14px;
   line-height: 1;
   margin: 0;
 }
 
-.error-message {
+.error-message-subscribe {
   color: #e63946;
 }
 
-.success-message {
+.success-message-subscribe {
   color: var(--color-accent-green);
 }

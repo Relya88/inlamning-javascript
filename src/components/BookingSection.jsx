@@ -10,18 +10,22 @@ export default function BookingSection() {
     purpose: "",
   });
 
+  //hanterar felmeddelanden och sparar statusmeddelande
+
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
 
-  const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ-]{2,}$/;
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ-]{2,}$/; // Här satte jag att ett namn måste innehålla vanliga bokstäver och minst 2 tecken
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Supersimpel e-post validering för a@a.se
 
+  //hanterar om förändringar i inputfälten uppstår (tog lite hjälp av chat)
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
     setErrors({ ...errors, [e.target.id]: "" });
     setSuccessMessage("");
   };
 
+  //hanterar det som händer när man bokar och validerar först alla fält och skickar sen till api:et
   const handleSubmit = async (e) => {
     e.preventDefault();
     let newErrors = {};
@@ -35,6 +39,8 @@ export default function BookingSection() {
       newErrors.purpose = "Minimum 20 characters required";
 
     setErrors(newErrors);
+
+    //om inga fel hittas skickas formuläret till api:et (tog lite hjälp av chatgpt)
 
     if (Object.keys(newErrors).length === 0) {
       try {
@@ -62,7 +68,7 @@ export default function BookingSection() {
     <section
       id="booking-section"
       className="booking-section"
-      aria-labelledby="booking-heading"
+      aria-labelledby="booking-heading" // WCAG. Gör så besökaren hör "Book Your Storage Unit Now..."
       role="form"
     >
       <div className="booking-container">
@@ -190,7 +196,7 @@ export default function BookingSection() {
                   Book Unit
                 </button>
                 {successMessage && (
-                  <p className="success-message" aria-live="polite" role="status">
+                  <p className="success-message-booking" aria-live="polite" role="status">
                     {successMessage}
                   </p>
                 )}
